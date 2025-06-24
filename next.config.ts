@@ -1,15 +1,10 @@
 import type { NextConfig } from 'next'
-import createMDX from '@next/mdx'
-
-const withMDX = createMDX({
-  extension: /\.mdx?$/
-})
 
 const nextConfig: NextConfig = {
+  // Optionally, add any other Next.js config below
   experimental: {
-    mdxRs: true
+    // mdxRs: true,
   },
-  pageExtensions: ['ts', 'tsx', 'mdx']
 }
 
-export default withMDX(nextConfig)
+export default nextConfig

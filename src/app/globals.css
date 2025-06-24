@@ -1,8 +1,11 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fefefe;
+  --foreground: #2c322c;
 }
 
 @theme inline {
@@ -12,13 +15,119 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #2c322c;
+    --foreground: #fefefe;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #FAF8F5;
+  color: #333333;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Estilos para tipografías */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Microinteracciones y animaciones */
+@layer utilities {
+  .hover-lift {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mejoras en botones */
+@layer components {
+  .btn-primary {
+    @apply bg-salviaclaro text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:bg-musgoprofundo hover:text-white;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-salviaclaro text-musgoprofundo hover:bg-rosaintenso hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+  }
+
+  /* Mejoras en enlaces */
+  .link-hover {
+    @apply text-musgoprofundo hover:text-rosaintenso;
+  }
+
+  /* Mejoras en tarjetas */
+  .card-hover {
+    @apply bg-rosasuave border border-grispiedra shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+  }
+}
+
+/* Focus visible para accesibilidad */
+*:focus-visible {
+  outline: 2px solid #D6A5A1;
+  outline-offset: 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #6B7F6A;
+}
+
+section {
+  background: none;
+}
+
+.bg-section-alt {
+  background: #F7E6E1;
+}
+
+.bg-footer {
+  background: #F7E6E1;
+  color: #6B7F6A;
+}
+
+.text-secondary {
+  color: #A8A8A8;
 }
