@@ -3,239 +3,230 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Inicio',
-  description: 'Acompañando cada etapa desde la fisioterapia y la maternidad. Fisioterapia y matrona especializada en suelo pélvico.',
+  description: 'Acompañamiento profesional en suelo pélvico, embarazo y postparto. Reserva tu cita presencial u online con Fisiomamifera.',
 }
+
+const servicios = [
+  {
+    title: 'Suelo pélvico',
+    description: 'Valoración y tratamiento personalizados para dolor, incontinencia o prevención.',
+  },
+  {
+    title: 'Embarazo',
+    description: 'Sesiones para aliviar molestias, preparar el cuerpo y resolver dudas con confianza.',
+  },
+  {
+    title: 'Postparto',
+    description: 'Recuperación integral del suelo pélvico y abdomen con acompañamiento cercano.',
+  },
+  {
+    title: 'Consulta online',
+    description: 'Seguimiento y ejercicios desde casa, con planes claros y objetivos realistas.',
+  },
+]
+
+const pasos = [
+  {
+    title: 'Primera escucha',
+    description: 'Conocemos tu historia y tus necesidades en un entorno seguro y respetuoso.',
+  },
+  {
+    title: 'Plan personalizado',
+    description: 'Definimos objetivos realistas y un plan de tratamiento adaptado a tu ritmo.',
+  },
+  {
+    title: 'Acompañamiento',
+    description: 'Sesiones dinámicas con seguimiento y recursos para tu día a día.',
+  },
+]
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-crudo">
-      {/* Hero Section */}
-      <section className="py-20 bg-rosasuave">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-musgoprofundo">Fisiomamifera</h1>
-          <p className="text-xl text-musgoprofundo mb-8">Acompañando a la mujer en cada etapa, con profesionalidad, calidez y ciencia.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/cita" className="btn-primary">Reservar cita</Link>
-            <Link href="/servicios" className="btn-secondary">Ver servicios</Link>
+    <div className="bg-cream">
+      <section className="section bg-hero-glow">
+        <div className="container-base grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-6">
+            <span className="badge">Matrona · Fisioterapia de suelo pélvico</span>
+            <h1 className="text-4xl font-serif font-semibold text-ink md:text-5xl lg:text-6xl">
+              Acompañamiento profesional para que te sientas segura en cada etapa.
+            </h1>
+            <p className="text-lg text-cocoa md:text-xl">
+              En Fisiomamifera encontrarás un espacio cálido y cercano para cuidar tu salud íntima, preparar tu embarazo y vivir el postparto con confianza.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link href="/cita" className="btn-primary">
+                Reservar cita
+              </Link>
+              <Link href="/servicios" className="btn-secondary">
+                Ver servicios
+              </Link>
+            </div>
+            <div className="flex flex-wrap gap-4 text-sm text-cocoa">
+              <span className="inline-flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-sage" />
+                Consulta presencial en Madrid
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-rose" />
+                Atención online disponible
+              </span>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-stone/30 bg-white p-8 shadow-soft">
+            <div className="space-y-6">
+              <div className="rounded-2xl bg-mist p-6">
+                <h2 className="text-2xl font-serif font-semibold text-ink">Reserva con tranquilidad</h2>
+                <p className="mt-3 text-sm text-cocoa">
+                  Te responderé personalmente para confirmar la cita y resolver cualquier duda antes de la sesión.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-rose text-white">1</span>
+                  <div>
+                    <p className="text-sm font-semibold text-ink">Envíame tu solicitud</p>
+                    <p className="text-sm text-cocoa">Completa el formulario o escríbeme por WhatsApp.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-rose text-white">2</span>
+                  <div>
+                    <p className="text-sm font-semibold text-ink">Confirmamos juntas</p>
+                    <p className="text-sm text-cocoa">Ajustamos horario, modalidad y objetivos.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-rose text-white">3</span>
+                  <div>
+                    <p className="text-sm font-semibold text-ink">Sesión personalizada</p>
+                    <p className="text-sm text-cocoa">Saldrás con un plan claro y recursos prácticos.</p>
+                  </div>
+                </div>
+              </div>
+              <Link href="/cita" className="btn-primary w-full">
+                Solicitar cita ahora
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-rose-800 mb-4">
-              Mis Servicios
-            </h2>
-            <p className="text-lg text-rose-600 max-w-2xl mx-auto">
-              Especializada en fisioterapia de suelo pélvico, embarazo y postparto
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Suelo Pélvico */}
-            <div className="bg-rose-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-200 border border-rose-200">
-              <div className="w-12 h-12 bg-rose-200 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-rose-800 mb-2">Suelo Pélvico</h3>
-              <p className="text-rose-700 text-sm">
-                Tratamiento especializado para la salud y bienestar del suelo pélvico
+      <section className="section">
+        <div className="container-base space-y-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="space-y-3">
+              <span className="badge">Servicios principales</span>
+              <h2 className="text-3xl font-serif font-semibold text-ink md:text-4xl">
+                Tratamientos pensados para tu bienestar integral
+              </h2>
+              <p className="text-cocoa md:text-lg">
+                Cada sesión combina evidencia científica, escucha activa y un plan adaptado a tu cuerpo y tu momento vital.
               </p>
             </div>
-
-            {/* Embarazo */}
-            <div className="bg-rose-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-200 border border-rose-200">
-              <div className="w-12 h-12 bg-rose-200 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-rose-800 mb-2">Embarazo</h3>
-              <p className="text-rose-700 text-sm">
-                Acompañamiento durante el embarazo con fisioterapia especializada
-              </p>
-            </div>
-
-            {/* Postparto */}
-            <div className="bg-rose-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-200 border border-rose-200">
-              <div className="w-12 h-12 bg-rose-200 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-rose-800 mb-2">Postparto</h3>
-              <p className="text-rose-700 text-sm">
-                Recuperación postparto y rehabilitación del suelo pélvico
-              </p>
-            </div>
-
-            {/* Online */}
-            <div className="bg-rose-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-200 border border-rose-200">
-              <div className="w-12 h-12 bg-rose-200 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-rose-800 mb-2">Consulta Online</h3>
-              <p className="text-rose-700 text-sm">
-                Sesiones online para mayor comodidad y flexibilidad
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link 
-              href="/servicios" 
-              className="btn-secondary"
-            >
-              Ver servicios
+            <Link href="/servicios" className="btn-ghost">
+              Ver detalle de servicios →
             </Link>
           </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {servicios.map((servicio) => (
+              <article key={servicio.title} className="card card-hover">
+                <h3 className="text-xl font-semibold text-ink">{servicio.title}</h3>
+                <p className="mt-3 text-sm text-cocoa">{servicio.description}</p>
+                <Link href="/servicios" className="mt-4 inline-flex items-center text-sm font-semibold text-rose">
+                  Saber más
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Horarios y Precios */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif font-bold text-musgoprofundo mb-10 text-center">Horarios y Precios</h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-xl p-6 border border-grispiedra bg-rosasuave card-hover">
-              <h3 className="text-xl font-semibold text-musgoprofundo mb-4">Horarios</h3>
-              <div className="space-y-2 text-musgoprofundo">
-                <div className="flex justify-between">
-                  <span>Lunes - Viernes</span>
-                  <span className="font-semibold">9:00 - 19:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sábados</span>
-                  <span className="font-semibold">9:00 - 14:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Domingos</span>
-                  <span className="font-semibold">Cerrado</span>
+      <section className="section bg-section-alt">
+        <div className="container-base grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="space-y-6">
+            <span className="badge">Cómo trabajo</span>
+            <h2 className="text-3xl font-serif font-semibold text-ink md:text-4xl">
+              Un método cuidadoso, claro y respetuoso
+            </h2>
+            <p className="text-cocoa md:text-lg">
+              Mi enfoque combina valoración clínica, educación y ejercicios específicos para ayudarte a tomar decisiones informadas.
+            </p>
+            <Link href="/sobre-mi" className="btn-secondary">
+              Conocer mi historia
+            </Link>
+          </div>
+          <div className="grid gap-4">
+            {pasos.map((paso, index) => (
+              <div key={paso.title} className="card card-hover flex gap-4">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sage text-ink">
+                  {index + 1}
+                </span>
+                <div>
+                  <h3 className="text-lg font-semibold text-ink">{paso.title}</h3>
+                  <p className="text-sm text-cocoa">{paso.description}</p>
                 </div>
               </div>
-              <p className="text-sm text-grispiedra mt-4">Consultas online disponibles fuera de horario</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-base grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-6">
+            <span className="badge">Testimonios</span>
+            <h2 className="text-3xl font-serif font-semibold text-ink md:text-4xl">
+              Experiencias reales, acompañamiento cercano
+            </h2>
+            <p className="text-cocoa">
+              Cada mujer vive su proceso de manera única. Mi compromiso es ofrecer un espacio donde te sientas escuchada y acompañada.
+            </p>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="card">
+                <p className="text-sm text-cocoa">“Marina me explicó cada paso y me dio seguridad. Sentí que por fin entendía lo que me pasaba.”</p>
+                <p className="mt-4 text-sm font-semibold text-ink">Laura · Postparto</p>
+              </div>
+              <div className="card">
+                <p className="text-sm text-cocoa">“Su enfoque es muy humano. Me fui con ejercicios claros y calma para mi embarazo.”</p>
+                <p className="mt-4 text-sm font-semibold text-ink">Marta · Embarazo</p>
+              </div>
             </div>
-            <div className="rounded-xl p-6 border border-grispiedra bg-salviaclaro card-hover">
-              <h3 className="text-xl font-semibold text-musgoprofundo mb-4">Precios</h3>
-              <div className="space-y-3 text-musgoprofundo">
-                <div className="flex justify-between">
-                  <span>Primera consulta</span>
-                  <span className="font-semibold text-rosaintenso">70€</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sesión de seguimiento</span>
-                  <span className="font-semibold text-rosaintenso">60€</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Consulta online</span>
-                  <span className="font-semibold text-rosaintenso">50€</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Bono 5 sesiones</span>
-                  <span className="font-semibold text-rosaintenso">275€</span>
-                </div>
-              </div>
-              <p className="text-sm text-grispiedra mt-4">Descuentos para bonos y consultas online</p>
+          </div>
+          <div className="rounded-2xl border border-stone/30 bg-white p-8 shadow-soft">
+            <h3 className="text-2xl font-serif font-semibold text-ink">¿Tienes dudas frecuentes?</h3>
+            <p className="mt-2 text-sm text-cocoa">Respuestas breves para ayudarte a decidir con tranquilidad.</p>
+            <div className="mt-6 space-y-3">
+              <details className="rounded-xl border border-stone/40 bg-mist px-4 py-3">
+                <summary className="cursor-pointer text-sm font-semibold text-ink">¿Las sesiones son dolorosas?</summary>
+                <p className="mt-2 text-sm text-cocoa">Siempre adapto el tratamiento a tu comodidad, explicando cada paso.</p>
+              </details>
+              <details className="rounded-xl border border-stone/40 bg-mist px-4 py-3">
+                <summary className="cursor-pointer text-sm font-semibold text-ink">¿Cuándo es el mejor momento para venir?</summary>
+                <p className="mt-2 text-sm text-cocoa">Puedes acudir en cualquier etapa si sientes molestias o quieres prevención.</p>
+              </details>
+              <details className="rounded-xl border border-stone/40 bg-mist px-4 py-3">
+                <summary className="cursor-pointer text-sm font-semibold text-ink">¿Atiendes también online?</summary>
+                <p className="mt-2 text-sm text-cocoa">Sí, las consultas online incluyen valoración, ejercicios guiados y seguimiento.</p>
+              </details>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-20 bg-sage-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="mb-8 flex justify-center">
-              <div className="w-20 h-20 rounded-full bg-rose-200 flex items-center justify-center overflow-hidden">
-                <svg className="w-10 h-10 text-rose-400" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                </svg>
-              </div>
-            </div>
-            <blockquote className="text-xl md:text-2xl text-sage-800 font-serif italic mb-6">
-              &ldquo;Gracias a Marina, viví mi embarazo y postparto con mucha más confianza y tranquilidad. Su apoyo y profesionalidad marcaron la diferencia en mi recuperación y en mi bienestar como madre.&rdquo;
-            </blockquote>
-            <cite className="text-sage-600 font-semibold">- Laura M., paciente</cite>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonios */}
-      <section className="py-20 bg-rosasuave">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif font-bold text-musgoprofundo mb-10 text-center">Testimonios</h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="bg-white rounded-xl shadow-md p-8 card-hover border border-grispiedra">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-salviaclaro flex items-center justify-center font-bold text-musgoprofundo text-xl">L</div>
-                <div>
-                  <span className="font-semibold text-musgoprofundo">Laura G.</span>
-                  <span className="block text-xs text-grispiedra">Madrid</span>
-                </div>
-              </div>
-              <p className="text-musgoprofundo italic">"Gracias a Marina recuperé mi suelo pélvico tras el parto. Su trato es cercano y profesional, me sentí acompañada en todo momento."</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-md p-8 card-hover border border-grispiedra">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-salviaclaro flex items-center justify-center font-bold text-musgoprofundo text-xl">M</div>
-                <div>
-                  <span className="font-semibold text-musgoprofundo">Marta S.</span>
-                  <span className="block text-xs text-grispiedra">Alcalá de Henares</span>
-                </div>
-              </div>
-              <p className="text-musgoprofundo italic">"Acudí por molestias en el embarazo y la mejoría fue increíble. Marina me dio confianza y herramientas para vivir el parto tranquila."</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-md p-8 card-hover border border-grispiedra">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-salviaclaro flex items-center justify-center font-bold text-musgoprofundo text-xl">C</div>
-                <div>
-                  <span className="font-semibold text-musgoprofundo">Carmen R.</span>
-                  <span className="block text-xs text-grispiedra">Getafe</span>
-                </div>
-              </div>
-              <p className="text-musgoprofundo italic">"Recomiendo a Marina a todas mis amigas. Es una gran profesional, explica todo con claridad y se nota que le apasiona su trabajo."</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-md p-8 card-hover border border-grispiedra">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-salviaclaro flex items-center justify-center font-bold text-musgoprofundo text-xl">S</div>
-                <div>
-                  <span className="font-semibold text-musgoprofundo">Sara T.</span>
-                  <span className="block text-xs text-grispiedra">Madrid</span>
-                </div>
-              </div>
-              <p className="text-musgoprofundo italic">"Me sentí escuchada y comprendida desde el primer día. El tratamiento fue personalizado y los resultados superaron mis expectativas."</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-rose-500 to-rose-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
-            ¿Lista para empezar tu camino hacia el bienestar?
-          </h2>
-          <p className="text-xl text-rose-100 mb-8">
-            Reserva tu primera consulta y descubre cómo puedo ayudarte
+      <section className="section bg-rose">
+        <div className="container-base text-center text-white">
+          <h2 className="text-3xl font-serif font-semibold md:text-4xl">¿Lista para empezar tu proceso?</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-white/90 md:text-lg">
+            Reserva tu cita y da el primer paso hacia un cuidado íntimo más consciente y respetuoso.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/cita" 
-              className="btn-primary"
-            >
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link href="/cita" className="btn-primary bg-white text-rose hover:bg-mist hover:text-rose">
               Reservar cita
             </Link>
-            <Link 
-              href="/contacto" 
-              className="border-2 border-white text-white hover:bg-white hover:text-rose-600 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200"
-            >
-              Contactar
+            <Link href="/contacto" className="btn-secondary border-white text-white hover:bg-white hover:text-rose">
+              Hacer una consulta
             </Link>
           </div>
         </div>

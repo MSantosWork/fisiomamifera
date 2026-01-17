@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Artículos sobre salud femenina, suelo pélvico, embarazo, postparto y bienestar. Consejos y recursos de Marina González Galán, matrona y fisioterapeuta.',
+  description: 'Artículos sobre salud femenina, suelo pélvico, embarazo y postparto. Recursos y consejos de Fisiomamifera.',
 }
 
 const posts = [
@@ -29,36 +29,43 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-crudo py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-serif font-bold text-musgoprofundo mb-4 text-center">Blog</h1>
-        <p className="text-lg text-musgoprofundo mb-10 text-center">
-          Consejos, recursos y artículos para tu bienestar. Información rigurosa y cercana sobre salud femenina, suelo pélvico, embarazo y postparto.
-        </p>
-        <div className="grid gap-8 md:grid-cols-2">
+    <div className="bg-cream">
+      <section className="section bg-hero-glow">
+        <div className="container-base text-center">
+          <span className="badge">Blog</span>
+          <h1 className="mt-4 text-4xl font-serif font-semibold text-ink md:text-5xl">Recursos para tu bienestar</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-cocoa">
+            Artículos claros y cercanos sobre salud femenina, suelo pélvico, embarazo y postparto.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-base grid gap-8 md:grid-cols-2">
           {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 border border-grispiedra card-hover"
+              className="card card-hover group"
             >
-              <div className="flex flex-col h-full">
-                <div className="mb-2 flex items-center gap-2">
-                  <span className="inline-block bg-rosasuave text-musgoprofundo text-xs font-semibold px-3 py-1 rounded-full">
-                    {new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
-                  </span>
-                </div>
-                <h2 className="text-2xl font-serif font-bold text-musgoprofundo group-hover:text-rosaintenso mb-2">{post.title}</h2>
-                <p className="text-textoprincipal flex-1">{post.summary}</p>
-                <span className="mt-4 text-musgoprofundo font-semibold group-hover:text-rosaintenso group-hover:underline">Leer artículo →</span>
-              </div>
+              <span className="badge">
+                {new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </span>
+              <h2 className="mt-4 text-2xl font-serif font-semibold text-ink group-hover:text-rose">{post.title}</h2>
+              <p className="mt-3 text-sm text-cocoa">{post.summary}</p>
+              <span className="mt-6 inline-flex items-center text-sm font-semibold text-rose">
+                Leer artículo →
+              </span>
             </Link>
           ))}
         </div>
-        <div className="mt-12 text-center text-grispiedra">
-          ¿Te gustaría que hablara sobre algún tema concreto? <Link href="/contacto" className="underline text-rosaintenso">Envíame tu sugerencia</Link>.
+        <div className="container-base mt-10 text-center text-sm text-cocoa">
+          ¿Te gustaría que hable sobre algún tema concreto?{' '}
+          <Link href="/contacto" className="font-semibold text-rose">
+            Envíame tu sugerencia
+          </Link>.
         </div>
-      </div>
+      </section>
     </div>
   )
 }
